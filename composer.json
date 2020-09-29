@@ -1,0 +1,15 @@
+{
+    "name": "vendor/smart-home",
+    "description": "Description of project smart_home.",
+    "authors": [
+        {
+            "name": "Грибов Павел",
+            "email": "donpadlo@gmail.com"
+        }
+    ],
+    "require": {
+        "twbs/bootstrap": "v4.5.2",
+        "components/jqueryui": "1.12.1",
+        "components/jquery": "3.4.1"
+    }
+}
