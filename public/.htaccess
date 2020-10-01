@@ -1,6 +1,9 @@
 php_value post_max_size 520M
 php_value default_charset utf-8
 
+ErrorDocument 404  /client/404
+
+
 <ifModule mod_rewrite.c>
     RewriteEngine On
     RewriteCond %{REQUEST_FILENAME} !-f

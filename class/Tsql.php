@@ -15,7 +15,5 @@ class Tsql {
         } catch (PDOException $e) {
             die($e->getMessage());
         }
-    }
+    }   
 }    
-
-$sqln=new Tsql($pdo_driver,$pdo_basename,$pdo_server,$pdo_username,$pdo_password);
