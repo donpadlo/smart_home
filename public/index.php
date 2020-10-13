@@ -18,9 +18,9 @@ require_once WUO_ROOT.'/../vendor/autoload.php';
 spl_autoload_register(function ($class_name) {
     require_once WUO_ROOT.'/../class/'.$class_name.'.php';
 });
-//инициализируем соединение с БД
-$sqln=new Tsql($pdo_driver,$pdo_basename,$pdo_server,$pdo_username,$pdo_password);
-$cfg=new Tcfg($sqln); 
+
+
+require_once WUO_ROOT.'/../inc/main.php';          // подготавливаемся к старту
 
 $client= ClearPath(_GET("client"));
 if ($client!=""){
@@ -35,3 +35,8 @@ if ($server!=""){
   };
   require_once WUO_ROOT."../controller/server/$server.php";
 };    
+
+if (($client=="") and (($server==""))){
+  $client="index";  
+  require_once WUO_ROOT."/../controller/client/index.php";  
+};

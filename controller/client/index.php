@@ -7,6 +7,11 @@
 
 require_once 'service/header.php';
 
+if ($user->id==0):
+    $client="service/login";
+endif;
+
 require_once "$client.php";
+
 
 require_once 'service/footer.php';
