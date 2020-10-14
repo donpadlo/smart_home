@@ -11,6 +11,8 @@ if ($user->id==0):
     $client="service/login";
 endif;
 
+if ($client=="index"):$client="home";endif;
+
 require_once "$client.php";
 
 

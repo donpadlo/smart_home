@@ -16,6 +16,11 @@ $pdo_username=$cfg_xml->pdo_username;
 $pdo_password=$cfg_xml->pdo_password;
 $pdo_basename=$cfg_xml->pdo_basename;
 
+// типы хранимых данных в storage по типам данных из data_types
+$sensors_array=array(1,2);  // температура,влажность
+$rele_array=array(2);       // реле с положением вкл/выкл
+
+
 date_default_timezone_set('Europe/Moscow'); // Временная зона по умолчанию
 
 // Если активен режим отладки, то показываем все ошибки и предупреждения

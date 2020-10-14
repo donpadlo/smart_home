@@ -8,10 +8,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="yarus">
 <title><?= $cfg->sitetitle ?></title>
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" href="/vendor/components/jqueryui/themes/base/all.css">
 <link rel="stylesheet" href="/vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/smarthome.css">
 
 <script src="/vendor/components/jquery/jquery.min.js"></script>
 <script src="/vendor/components/jqueryui/jquery-ui.min.js"></script>
