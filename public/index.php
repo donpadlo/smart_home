@@ -30,10 +30,10 @@ if ($client!=""){
 
 $server= ClearPath(_GET("server"));
 if ($server!=""){
-  if (is_file(WUO_ROOT."/../controller/server/".$client.".php")==false) {
-    die("указанный путь не найден..");    
+  if (is_file(WUO_ROOT."/../controller/server/".$server.".php")==false) {
+    die("указанный путь не найден..(".WUO_ROOT."/../controller/server/".$server.".php)");    
   };
-  require_once WUO_ROOT."../controller/server/$server.php";
+  require_once WUO_ROOT."/../controller/server/$server.php";
 };    
 
 if (($client=="") and (($server==""))){

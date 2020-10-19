@@ -8,6 +8,8 @@
 class Tcfg {
     public $dbh;
     public $sitetitle;
+    public $refreshtime=5000;
+    public $timemout=1000;
     public function __construct($sqln) {
         $this->dbh=$sqln->dbh;
     }
@@ -19,5 +21,7 @@ class Tcfg {
     public function GetMainParam() {
         //var_dump($this->dbh);
         $this->sitetitle=$this->GetParam("sitetitle");
+        $this->refreshtime=$this->GetParam("refreshtime");
+        $this->timemout=$this->GetParam("timemout");
     }
 }    

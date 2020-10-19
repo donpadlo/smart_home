@@ -18,4 +18,23 @@ class TDevices {
         }; 
         return $device_info;
     }
+    public static function GetLastStorageValue($sqln,$device,$datatype) {            
+        $st["value"]=0;
+        $st["dname"]="Non";
+        $st["dt"]="2000-01-01 00:00:00";
+        $st["timeout"]=1000;
+        $sql="select (UNIX_TIMESTAMP(now())-UNIX_TIMESTAMP(storage.dt)) as timemout,storage.dt,storage.value,data_types.id as dtype,data_types.name as dname,data_types.comment as dcomment from storage inner join data_types on data_types.id=storage.datatype where storage.device=$device and data_types.id=".$datatype." order by storage.id desc limit 1";        
+        //echo "$sql</br>";
+        $stmt3=$sqln->dbh->prepare($sql);
+        $stmt3->execute();
+        $data = $stmt3->fetchAll(PDO::FETCH_ASSOC);           
+        foreach ($data as $dev){
+            $st["dname"]=$dev["dname"];
+            $st["value"]=$dev["value"];
+            $st["dt"]=$dev["dt"];
+            $st["timeout"]=$dev["timeout"];
+        }; 
+        return $st;
+        
+    }
 } 

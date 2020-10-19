@@ -13,10 +13,12 @@
 <link rel="stylesheet" href="/vendor/components/jqueryui/themes/base/all.css">
 <link rel="stylesheet" href="/vendor/twbs/bootstrap/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="/css/smarthome.css">
+<link rel="stylesheet" href="/css/bootstrap4-toggle.min.css">
 
 <script src="/vendor/components/jquery/jquery.min.js"></script>
 <script src="/vendor/components/jqueryui/jquery-ui.min.js"></script>
 <script src="/vendor/twbs/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="/js/bootstrap4-toggle.min.js"></script>
  <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
