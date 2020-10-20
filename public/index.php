@@ -19,7 +19,6 @@ spl_autoload_register(function ($class_name) {
     require_once WUO_ROOT.'/../class/'.$class_name.'.php';
 });
 
-
 require_once WUO_ROOT.'/../inc/main.php';          // подготавливаемся к старту
 
 $client= ClearPath(_GET("client"));

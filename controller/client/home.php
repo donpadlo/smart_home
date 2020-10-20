@@ -66,11 +66,15 @@
                             if ($storage["value"]=="off"):$active="";endif;
                                 ?>
                                 <div class='reledataview'>
-                                    <input namwe='sensordiv<?=$cnt?>' id='sensordiv<?=$cnt?>' class="form-check-input" type="checkbox" data-toggle="toggle" <?=$active?>>
-                                </div>
-                                <?php      
-                                echo "<script>timerId = setInterval(() => UpdateRele('sensordiv$cnt',$device,$dttypeid), ".$cfg->refreshtime.");</script>";
-                            
+                                    <input  namwe='sensordiv<?=$cnt?>' id='sensordiv<?=$cnt?>' class="form-check-input" type="checkbox" data-toggle="toggle" <?=$active?>>
+                                </div>       
+                                <script> 
+                                    $('#sensordiv<?=$cnt?>').change(function() {
+                                        ChangeRele('sensordiv<?=$cnt?>',<?=$device?>);
+                                    });                                     
+                                    timerId = setInterval(() => UpdateRele('sensordiv<?=$cnt?>',<?=$device?>,<?=$dttypeid?>),<?=$cfg->refreshtime?>);
+                                </script>
+                               <?php
                         endif;                       
                     };                                    
                 };
@@ -86,6 +90,13 @@
 ?>
 </div>
 <script>
+function ChangeRele(relediv,device){
+   console.log(relediv,device);
+    $.get("/server/common/setReleOffOn&device="+device+"&status="+$("#"+relediv).is(":checked"), function(data) {       
+      console.log(data);
+    });
+   
+};
 function UpdateSensor(divid,device,dttypeid){
   console.log("S",divid,device,dttypeid);  
   //$("#"+divid).load("/server/common/getvaluesensor&device="+device+"&datatype="+dttypeid);
@@ -105,14 +116,14 @@ function UpdateRele(divid,device,dttypeid){
     $.get("/server/common/getvaluerele&device="+device+"&datatype="+dttypeid, function(data) {
         data=JSON.parse(data);
         if (data.timeout><?=$cfg->timeout?>){
-            $('#'+divid).bootstrapToggle('disable');
+           // $('#'+divid).bootstrapToggle('disable');
         } else {
-            $('#'+divid).bootstrapToggle('enable');
-            if (data.value=="on"){
-                $('#'+divid).bootstrapToggle('on');
-            } else {
-                $('#'+divid).bootstrapToggle('off');              
-            };
+//            $('#'+divid).bootstrapToggle('enable');
+//            if (data.value=="on"){
+//                $('#'+divid).bootstrapToggle('on');
+//            } else {
+//                $('#'+divid).bootstrapToggle('off');              
+//            };
            // console.log(data);
         };
     });
