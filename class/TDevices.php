@@ -9,6 +9,7 @@ class TDevices {
         $device_info["name"]="";
         $device_info["comment"]="";
         $sql="select * from devices where id=$device";        
+        //echo "$sql\n";
         $stmt3=$sqln->dbh->prepare($sql);
         $stmt3->execute();
         $data = $stmt3->fetchAll(PDO::FETCH_ASSOC);           

@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 
 # Исходный код Smart Home доступен по лицензии GPL3

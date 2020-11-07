@@ -5,6 +5,10 @@
 # Изначальный автор: Грибов Павел
 # https://грибовы.рф
 
+function HumanDate($dt){
+    $dt=(new DateTime($mySqlResult[$dt]))->format('d.m.Y h:i:s');
+    return $dt;
+}
 /**
  * Возвращает значение $_GET[$name] или $def
  * @param string $name
